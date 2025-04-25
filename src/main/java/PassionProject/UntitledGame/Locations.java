@@ -4,12 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import org.springframework.context.annotation.Bean;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import java.awt.List;
 
 @Entity
 public class Locations {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
     private String initDesc;
     private String longDesc;
