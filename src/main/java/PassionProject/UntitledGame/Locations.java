@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import org.springframework.context.annotation.Bean;
-
 import java.awt.List;
 
 @Entity
