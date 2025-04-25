@@ -1,5 +1,6 @@
 {
   "name": "name",
   "initDesc": "initDesc",
-  "longDesc": "longDesc"
+  "longDesc": "longDesc",
+  "pathList": "paths"
 }
