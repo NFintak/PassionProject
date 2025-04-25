@@ -10,5 +10,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface LocationsRepo extends ListPagingAndSortingRepository<Locations, String>,
         CrudRepository<Locations, String> {
 
-    List findByName(@Param("name") String name);
+    List findById(@Param("id") int id);
+    
 }

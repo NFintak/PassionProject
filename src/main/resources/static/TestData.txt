@@ -1,4 +1,0 @@
-Intro; sample text; sample text; Wall1/Wall2/Wall3/Wall4##
-Wall1; sample text1; sample text1; Window/Bookshelf##
-Bookshelf; sample text2; sample text2; Statue/Book1/Book2##
-Statue; sample text3; sample text3; null##

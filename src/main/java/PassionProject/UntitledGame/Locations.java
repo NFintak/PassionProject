@@ -5,22 +5,30 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import org.springframework.context.annotation.Bean;
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.awt.List;
 
 @Entity
-@Table(name = "location")
+@Table(name = "locations")
 public class Locations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private String initDesc;
-    private String longDesc;
-    private List paths;
 
+    @Column(name = "title", nullable = false)
+    private String name;
+
+    @Column(name = "inital_desc", nullable = false)
+    private String initDesc;
+
+    @Column(name = "longer_desc", nullable = false)
+    private String longDesc;
+
+    @Column(name = "paths")
+    private List paths;
 
     public Locations(String name, String initDesc, String longDesc, List emptyList) {
         this.id = id;
