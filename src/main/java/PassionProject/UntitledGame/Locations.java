@@ -9,6 +9,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.awt.List;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "locations")
@@ -16,12 +17,12 @@ public class Locations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(name = "title", nullable = false)
     private String name;
 
-    @Column(name = "inital_desc", nullable = false)
+    @Column(name = "initial_desc", nullable = false)
     private String initDesc;
 
     @Column(name = "longer_desc", nullable = false)
@@ -30,6 +31,8 @@ public class Locations {
     @Column(name = "paths")
     private List paths;
 
+    private ArrayList<Locations> locationsList = new ArrayList<>();
+
     public Locations(String name, String initDesc, String longDesc, List emptyList) {
         this.id = id;
         this.name = name;
@@ -37,12 +40,6 @@ public class Locations {
         this.longDesc = longDesc;
         this.paths = emptyList;
     }
-
-//     @Bean
-//     @OneToMany(mappedBy="name")
-//     public Locations location(String name, String initDesc, String longDesc, List paths) {
-//         return new Locations(name, initDesc, longDesc, paths);
-//     }
 
     public String getLocationName() {
         return name;
@@ -75,5 +72,17 @@ public class Locations {
     public void addPath(String path) {
         this.paths.add(path);
     }
+
+    public void removePath(String path) {
+        this.paths.remove(path);
+    }
+
+//    public ArrayList<Locations> getLocationsList() {
+//        return this.locationsList;
+//    }
+//
+//    public void setLocationsList(ArrayList<Locations> list) {
+//        this.locationsList = list;
+//    }
 
 }
