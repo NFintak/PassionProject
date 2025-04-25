@@ -2,6 +2,9 @@ package PassionProject.UntitledGame;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import org.springframework.context.annotation.Bean;
+
 import java.awt.List;
 
 @Entity
@@ -21,11 +24,11 @@ public class Locations {
         this.paths = emptyList;
     }
 
-    // @Bean
-    // @OneToMany(mappedBy="name")
-    // public Location location(String name, String initDesc, String longDesc, List<Location> paths) {
-    //     return new Location(name, initDesc, longDesc, paths);
-    // }
+     @Bean
+     @OneToMany(mappedBy="name")
+     public Locations location(String name, String initDesc, String longDesc, List paths) {
+         return new Locations(name, initDesc, longDesc, paths);
+     }
 
     public String getLocationName() {
         return name;
