@@ -1,13 +1,8 @@
 package PassionProject.UntitledGame;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.context.annotation.Bean;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import java.awt.List;
 import java.util.ArrayList;
 
@@ -17,6 +12,7 @@ public class Locations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "location_id")
     private Integer id;
 
     @Column(name = "title", nullable = false)
@@ -30,6 +26,13 @@ public class Locations {
 
     @Column(name = "paths")
     private List paths;
+
+    @OneToMany
+    @JoinTable(
+            name = "location_paths",
+            joinColumns = @JoinColumn(name = "location_id"),
+            inverseJoinColumns = @JoinColumn(name = "path_id")
+    )
 
     private ArrayList<Locations> locationsList = new ArrayList<>();
 

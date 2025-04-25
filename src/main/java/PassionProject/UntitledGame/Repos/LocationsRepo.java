@@ -1,4 +1,4 @@
-package PassionProject.UntitledGame;
+package PassionProject.UntitledGame.Repos;
 
 import org.springframework.data.repository.CrudRepository;
 import PassionProject.UntitledGame.Locations;

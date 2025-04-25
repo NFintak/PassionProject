@@ -9,11 +9,11 @@ import java.awt.*;
 @Configuration
 public class LocationConfig {
 
-//    @Bean
-//    //@OneToMany(mappedBy="name")
-//    public Locations location() {
-//        List empty = new List();
-//        return new Locations("testName", "testShortDesc", "testLongerDesc", empty);
-//    }
+    @Bean
+    //@OneToMany(mappedBy="name")
+    public Locations location() {
+        List empty = new List();
+        return new Locations("testName", "testShortDesc", "testLongerDesc", empty);
+    }
 
 }
