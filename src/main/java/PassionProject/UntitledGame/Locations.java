@@ -3,12 +3,14 @@ package PassionProject.UntitledGame;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import org.springframework.context.annotation.Bean;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.awt.List;
 
 @Entity
+@Table(name = "location")
 public class Locations {
 
     @Id
@@ -27,11 +29,11 @@ public class Locations {
         this.paths = emptyList;
     }
 
-     @Bean
-     @OneToMany(mappedBy="name")
-     public Locations location(String name, String initDesc, String longDesc, List paths) {
-         return new Locations(name, initDesc, longDesc, paths);
-     }
+//     @Bean
+//     @OneToMany(mappedBy="name")
+//     public Locations location(String name, String initDesc, String longDesc, List paths) {
+//         return new Locations(name, initDesc, longDesc, paths);
+//     }
 
     public String getLocationName() {
         return name;
