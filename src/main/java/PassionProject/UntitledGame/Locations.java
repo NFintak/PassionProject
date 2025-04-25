@@ -23,6 +23,7 @@ public class Locations {
 
 
     public Locations(String name, String initDesc, String longDesc, List emptyList) {
+        this.id = id;
         this.name = name;
         this.initDesc = initDesc;
         this.longDesc = longDesc;

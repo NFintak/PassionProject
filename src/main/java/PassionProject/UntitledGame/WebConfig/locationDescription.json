@@ -1,4 +1,5 @@
 {
-  "id": "id",
-  "content": "initDesc"
+  "name": "name",
+  "initDesc": "initDesc",
+  "longDesc": "longDesc"
 }
