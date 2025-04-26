@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import PassionProject.UntitledGame.Repos.LocationsRepo;
 import PassionProject.UntitledGame.Locations;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/locations")

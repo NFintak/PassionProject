@@ -1,4 +1,8 @@
 package PassionProject.UntitledGame.Repos;
 
-public interface LevelBuilderRepo {
+import PassionProject.UntitledGame.LevelBuilder;
+import org.springframework.data.repository.CrudRepository;
+
+public interface LevelBuilderRepo extends CrudRepository<LevelBuilder, Integer> {
+
 }
