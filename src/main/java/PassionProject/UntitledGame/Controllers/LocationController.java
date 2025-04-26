@@ -25,20 +25,22 @@ public class LocationController {
         return locationsRepo.findAll();
     }
 
-    @GetMapping("/location_list")
+    @GetMapping("/list")
+    @ResponseBody
     public String getLocations(Model template) {
         Iterable<Locations> allLocations = this.getAllLocations();
-        template.addAttribute("location", allLocations);
-        return "location-list";
+        template.addAttribute("locations_list", allLocations);
+        return "locations_list";
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public String getRoomName(@PathVariable Integer id, Model template) {
         Locations location = locationsRepo.findById(id).orElseThrow(
                 () -> new RuntimeException("Room unknown")
         );
         template.addAttribute("location", location);
-        return "location-desc";
+        return location.getLocationName() + "\n" + location.getInitDesc();
     }
 
 

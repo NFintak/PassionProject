@@ -25,7 +25,7 @@ public class Locations {
     private String longDesc;
 
     @Column(name = "paths")
-    private List paths;
+    private Integer paths;
 
     @OneToMany
     @JoinTable(
@@ -36,12 +36,12 @@ public class Locations {
 
     private ArrayList<Locations> locationsList = new ArrayList<>();
 
-    public Locations(String name, String initDesc, String longDesc, List emptyList) {
+    public Locations(String name, String initDesc, String longDesc, Integer path) {
         this.id = id;
         this.name = name;
         this.initDesc = initDesc;
         this.longDesc = longDesc;
-        this.paths = emptyList;
+        this.paths = path;
     }
 
     public String getLocationName() {
@@ -68,16 +68,12 @@ public class Locations {
         this.longDesc = longDesc;
     }
 
-    public List getLocations() {
+    public Integer getLocations() {
         return paths;
     }
 
-    public void addPath(String path) {
-        this.paths.add(path);
-    }
-
-    public void removePath(String path) {
-        this.paths.remove(path);
+    public void setPath(Integer path) {
+        this.paths = path;
     }
 
 //    public ArrayList<Locations> getLocationsList() {
