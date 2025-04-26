@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/locations")
+@RequestMapping("/location")
 public class LocationController {
 
-    @Autowired
+    //@Autowired
     public LocationsRepo locationsRepo;
 
+    @Autowired
     public LocationController(LocationsRepo locationsRepo) {
         this.locationsRepo = locationsRepo;
     }
@@ -27,10 +28,8 @@ public class LocationController {
     }
 
     @GetMapping("/list")
-    @PostMapping
-    @ResponseBody
     public String getLocations(Model model) {
-        Iterable<Locations> allLocations = locationsRepo.findAll();
+        Iterable<Locations> allLocations = getAllLocations();
         model.addAttribute("locations", allLocations);
         return "location_list";
     }

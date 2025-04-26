@@ -27,17 +27,23 @@ public class Locations {
     @Column(name = "paths")
     private Integer paths;
 
-    @OneToMany
-    @JoinTable(
-            name = "location_paths",
-            joinColumns = @JoinColumn(name = "location_id"),
-            inverseJoinColumns = @JoinColumn(name = "path_id")
-    )
+//    @OneToMany
+//    @JoinTable(
+//            name = "location_paths",
+//            joinColumns = @JoinColumn(name = "location_id"),
+//            inverseJoinColumns = @JoinColumn(name = "path_id")
+//    )
+//
+//    private ArrayList<Locations> locationsList = new ArrayList<>();
 
-    private ArrayList<Locations> locationsList = new ArrayList<>();
+    public Locations() {
+        this.name = "";
+        this.initDesc = "";
+        this.longDesc = "";
+        this.paths = 0;
+    }
 
     public Locations(String name, String initDesc, String longDesc, Integer path) {
-        this.id = id;
         this.name = name;
         this.initDesc = initDesc;
         this.longDesc = longDesc;
