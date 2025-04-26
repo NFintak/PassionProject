@@ -411,3 +411,6 @@ INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","PATHS","INITIAL_DESC","LONGER_DE
 2025-04-26 15:40:46.676677-04:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (LOCATIONS: ""PATHS"" INTEGER)"; SQL statement:
 INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","PATHS","INITIAL_DESC","LONGER_DESC","TITLE")VALUES(?,?,?,?,?) [22018-232]
+2025-04-26 19:36:47.582572-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "Drop table [*]if table exists level_selection"; expected "identifier"; SQL statement:
+Drop table if table exists level_selection [42001-232]

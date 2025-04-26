@@ -1,31 +1,30 @@
 package PassionProject.UntitledGame;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "location_paths")
-public class LevelBuilder {
+@Table(name = "level_selection")
+public class LevelSelection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "path_id")
+    @Column(name = "level_id")
     private Integer id;
+
+    @Column(name = "level_name")
+    private String levelName;
 
     @Column(name = "start_point")
     private Integer startPoint;
 
-    @Column(name = "path_options")
-    private java.util.List<Integer> paths;
-
-    public LevelBuilder(Integer startPoint, List<Integer> paths) {
+    public LevelSelection(String levelName, Integer startPoint) {
+        this.levelName = levelName;
         this.startPoint = startPoint;
-        this.paths = paths;
     }
 
-    public LevelBuilder() {
-
+    public LevelSelection() {
+        this.levelName = "";
+        this.startPoint = 0;
     }
 
     public Integer getId() {
@@ -42,18 +41,6 @@ public class LevelBuilder {
 
     public void setStartPoint(Integer start) {
         this.startPoint = start;
-    }
-
-    public java.util.List<Integer> getPaths() {
-        return paths;
-    }
-
-    public void setPaths(List<Integer> paths) {
-        this.paths = paths;
-    }
-
-    public void addPath(Integer path) {
-        this.paths.add(path);
     }
 
 

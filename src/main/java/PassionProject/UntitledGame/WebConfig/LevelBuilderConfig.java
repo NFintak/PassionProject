@@ -1,8 +1,7 @@
 package PassionProject.UntitledGame.WebConfig;
 
-import PassionProject.UntitledGame.LevelBuilder;
+import PassionProject.UntitledGame.LevelSelection;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 import java.util.Arrays;
@@ -11,8 +10,7 @@ import java.util.Arrays;
 public class LevelBuilderConfig {
 
     @Bean
-    public LevelBuilder levelBuilder() {
-        List<Integer> path = Arrays.asList(0);
-        return new LevelBuilder(0, path);
+    public LevelSelection levelBuilder() {
+        return new LevelSelection("", 0);
     }
 }
