@@ -29,7 +29,7 @@ public class LocationController {
     @ResponseBody
     public String getLocations(Model template) {
         Iterable<Locations> allLocations = this.getAllLocations();
-        template.addAttribute("locations_list", allLocations);
+        template.addAttribute("location", allLocations);
         return "locations_list";
     }
 

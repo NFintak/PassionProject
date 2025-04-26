@@ -7,9 +7,12 @@
 </head>
     <body>
         <h1 th:inline="text">test data list</h1>
+        <script src="javascript/test1.js" async defer></script>
         <div th:each="location : ${locations}">
             <p><b>Name:</b> <span th:text="location.name"></span></p><br>
             <p><b>At a glance:</b> <span th:text="location.initDesc"></span></p>
+            <p><b>More details:</b> <span th:text="location.longDesc"></span></p>
+            <p><b>Paths:</b> <span th:text="location.paths"></span></p>
             <hr>
         </div>
     </body>
