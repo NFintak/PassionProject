@@ -10,7 +10,6 @@ import java.awt.*;
 public class LocationConfig {
 
     @Bean
-    //@OneToMany(mappedBy="name")
     public Locations location() {
         List empty = new List();
         return new Locations("testName", "testShortDesc", "testLongerDesc", empty);
