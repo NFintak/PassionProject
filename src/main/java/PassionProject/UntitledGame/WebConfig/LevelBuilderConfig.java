@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 import java.util.Arrays;
 
-@Configuration
+//@Configuration
 public class LevelBuilderConfig {
 
     @Bean

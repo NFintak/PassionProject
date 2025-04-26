@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.awt.*;
 
-@Configuration
+//@Configuration
 public class LocationConfig {
 
     @Bean

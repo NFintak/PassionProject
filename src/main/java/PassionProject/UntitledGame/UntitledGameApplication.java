@@ -15,15 +15,15 @@ public class UntitledGameApplication {
 		SpringApplication.run(UntitledGameApplication.class, args);
 	}
 
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurer() {
-//			//@Override
-//			public void addCorsMapping(CorsRegistry registry) {
-//				registry.addMapping("/**").allowedOrigins("*")
-//						.allowedMethods("*").allowedHeaders("*");
-//			}
-//		};
-//	}
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			//@Override
+			public void addCorsMapping(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("*")
+						.allowedMethods("*").allowedHeaders("*");
+			}
+		};
+	}
 
 }

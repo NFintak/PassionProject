@@ -3,12 +3,14 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>test1</title>
-    <script src="../javascript/test1.js" async defer></script>
 </head>
-<body>
-<h1 th:inline="text">test data list</h1>
-</body>
+    <body>
+        <h1 th:inline="text">test data list</h1>
+        <div th:each="location : ${locations}">
+            <p><b>Name:</b> <span th:text="location.name"></span></p><br>
+            <p><b>At a glance:</b> <span th:text="location.initDesc"></span></p>
+            <hr>
+        </div>
+    </body>
 </html>
