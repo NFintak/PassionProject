@@ -25,11 +25,11 @@ public class LocationController {
         return locationsRepo.findAll();
     }
 
-    @GetMapping("/list")
+    @GetMapping("/location_list")
     public String getLocations(Model template) {
         Iterable<Locations> allLocations = this.getAllLocations();
         template.addAttribute("location", allLocations);
-        return "locationList";
+        return "location-list";
     }
 
     @GetMapping("/{id}")
