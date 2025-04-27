@@ -16,6 +16,11 @@ public class LevelSelectionController {
         this.levelSelectionRepo = levelBuilderRepo;
     }
 
+    @GetMapping
+    public Iterable<LevelSelection> getLevels() {
+        return levelSelectionRepo.findAll();
+    }
+
     @GetMapping("/list")
     public Iterable<LevelSelection> getAllLevels() {
         return levelSelectionRepo.findAll();

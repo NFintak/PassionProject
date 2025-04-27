@@ -5,12 +5,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import PassionProject.UntitledGame.Repos.LocationsRepo;
 import PassionProject.UntitledGame.Locations;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/levelselect/locations")
+@RequestMapping("/levelselect/{level_id}/")
 public class LocationController {
 
     //@Autowired
@@ -28,15 +25,13 @@ public class LocationController {
     }
 
     @GetMapping("/list")
-    public Iterable<Locations> getLocations(Model model) {
+    public Iterable<Locations> getLocations() {
         return locationsRepo.findAll();
     }
 
     @GetMapping("/{id}")
-    public Locations getLocation(@PathVariable(required = true) Integer id, Model model) {
-        return locationsRepo.findById(id).orElseThrow(
-                () -> new RuntimeException("Room unknown")
-        );
+    public Locations getLocation(@PathVariable(required = true) Integer id) {
+        return locationsRepo.getByLevelId(id);
     }
 
 
