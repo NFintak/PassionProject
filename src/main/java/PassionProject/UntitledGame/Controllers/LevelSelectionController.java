@@ -16,12 +16,12 @@ public class LevelSelectionController {
         this.levelSelectionRepo = levelBuilderRepo;
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public Iterable<LevelSelection> getAllLevels() {
         return levelSelectionRepo.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public LevelSelection getPathsById(@PathVariable Integer id) {
         return levelSelectionRepo.findById(id).orElseThrow(
                 () -> new RuntimeException("Path not found")

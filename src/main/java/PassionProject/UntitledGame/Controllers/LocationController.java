@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/location")
+@RequestMapping("/levelselect/locations")
 public class LocationController {
 
     //@Autowired
@@ -28,19 +28,15 @@ public class LocationController {
     }
 
     @GetMapping("/list")
-    public String getLocations(Model model) {
-        Iterable<Locations> allLocations = getAllLocations();
-        model.addAttribute("locations", allLocations);
-        return "location_list";
+    public Iterable<Locations> getLocations(Model model) {
+        return locationsRepo.findAll();
     }
 
     @GetMapping("/{id}")
-    public String getLocation(@PathVariable(required = true) Integer id, Model model) {
-        Locations location = locationsRepo.findById(id).orElseThrow(
+    public Locations getLocation(@PathVariable(required = true) Integer id, Model model) {
+        return locationsRepo.findById(id).orElseThrow(
                 () -> new RuntimeException("Room unknown")
         );
-        model.addAttribute("location", location);
-        return "location";
     }
 
 

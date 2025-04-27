@@ -8,23 +8,20 @@ public class LevelSelection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    //@OneToMany
+    //@JoinColumn(name = "level_id")
     @Column(name = "level_id")
     private Integer id;
 
     @Column(name = "level_name")
     private String levelName;
 
-    @Column(name = "start_point")
-    private Integer startPoint;
-
-    public LevelSelection(String levelName, Integer startPoint) {
+    public LevelSelection(String levelName) {
         this.levelName = levelName;
-        this.startPoint = startPoint;
     }
 
     public LevelSelection() {
         this.levelName = "";
-        this.startPoint = 0;
     }
 
     public Integer getId() {
@@ -35,12 +32,12 @@ public class LevelSelection {
         this.id = id;
     }
 
-    public Integer getStartPoint() {
-        return startPoint;
+    public String getLevelName() {
+        return levelName;
     }
 
-    public void setStartPoint(Integer start) {
-        this.startPoint = start;
+    public void setLevelName(String levelName) {
+        this.levelName = levelName;
     }
 
 

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 @Table(name = "locations")
 public class Locations {
 
+    @ManyToOne
+    @JoinColumn(name = "level_id", nullable = false)
+    private LevelSelection levelSelection;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "location_id")

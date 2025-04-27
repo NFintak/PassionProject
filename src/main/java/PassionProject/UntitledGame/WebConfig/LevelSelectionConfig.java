@@ -3,14 +3,11 @@ package PassionProject.UntitledGame.WebConfig;
 import PassionProject.UntitledGame.LevelSelection;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-import java.util.Arrays;
-
 //@Configuration
-public class LevelBuilderConfig {
+public class LevelSelectionConfig {
 
     @Bean
-    public LevelSelection levelBuilder() {
-        return new LevelSelection("", 0);
+    public LevelSelection levelSelection() {
+        return new LevelSelection("");
     }
 }
