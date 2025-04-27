@@ -7,13 +7,13 @@ import PassionProject.UntitledGame.Repos.LocationsRepo;
 import PassionProject.UntitledGame.Locations;
 
 @RestController
-@RequestMapping("/level_selection/{level_id}/")
+@RequestMapping("/locations")
 public class LocationController {
 
-    //@Autowired
+    @Autowired
     public LocationsRepo locationsRepo;
 
-    @Autowired
+    //@Autowired
     public LocationController(LocationsRepo locationsRepo) {
         this.locationsRepo = locationsRepo;
     }
@@ -29,11 +29,15 @@ public class LocationController {
         return locationsRepo.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Locations getLocation(@PathVariable(required = true) Integer id) {
-        return locationsRepo.findById(id).orElseThrow(
-                () -> new RuntimeException("Path not found")
-        );
+    @GetMapping("/{level_id}")
+    public Iterable<Locations> getLocationsByLvlId(@PathVariable(required = true) Integer level_id) {
+        return locationsRepo.findByLevelId(level_id);
+    }
+
+
+    @GetMapping("/{level_id}/{id}")
+    public Iterable<Locations> getLocation(@PathVariable(required = true) Integer level_id, @PathVariable(required = true) Integer id) {
+        return locationsRepo.findByLevelIdAndId(level_id, id);
     }
 
 
