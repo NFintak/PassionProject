@@ -26,13 +26,13 @@ public class LevelSelectionController {
     }
 
     @GetMapping("/list")
-    public String getAllLevels(Model model) {
-        Iterable<LevelSelection> levels = levelSelectionRepo.findAll();
+    public Iterable<LevelSelection> getAllLevels(Model model) {
+//        Iterable<LevelSelection> levels = levelSelectionRepo.findAll();
 //        for (LevelSelection level : levels) {
 //            System.out.println("Name: " + level.getLevelName() + "\nDescription: " + level.getDesc());
 //        }
-        model.addAttribute("level", levels);
-        return "level_selection/list";
+//        model.addAttribute("level", levels);
+        return levelSelectionRepo.findAll();
     }
 
     @GetMapping("/{id}")
