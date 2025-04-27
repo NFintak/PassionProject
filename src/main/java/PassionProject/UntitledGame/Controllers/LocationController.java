@@ -31,7 +31,9 @@ public class LocationController {
 
     @GetMapping("/{id}")
     public Locations getLocation(@PathVariable(required = true) Integer id) {
-        return locationsRepo.getByLevelId(id);
+        return locationsRepo.findById(id).orElseThrow(
+                () -> new RuntimeException("Path not found")
+        );
     }
 
 

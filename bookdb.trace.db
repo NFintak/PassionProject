@@ -524,3 +524,133 @@ Drop table if exists locations [90107-232]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-26 22:20:56.588188-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table level_selection add description[*]"; expected "data type"; SQL statement:
+alter table level_selection add description [42001-232]
+2025-04-26 22:33:30.221491-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "LEVEL_ID" not found; SQL statement:
+alter table locations
+add constraint locations_level_id_fk
+foreign key (level_id) references level_selection (level_id) [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:786)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:184)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:215)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:139)
+	at org.h2.command.Command.executeUpdate(Command.java:304)
+	at org.h2.command.Command.executeUpdate(Command.java:248)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-26 22:39:59.974476-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter [*]locations alter column path set data type array"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+alter locations alter column path set data type array [42001-232]
+2025-04-26 22:41:58.947414-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set [*]date type array using int"; SQL statement:
+alter table locations alter column paths set date type array using int [42000-232]
+2025-04-26 22:42:07.279601-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set data type [*]array using int"; expected "data type"; SQL statement:
+alter table locations alter column paths set data type array using int [42001-232]
+2025-04-26 22:42:10.313474-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set data type [*]array using int"; expected "data type"; SQL statement:
+alter table locations alter column paths set data type array using int [42001-232]
+2025-04-26 22:42:16.603384-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set [*]array using int"; SQL statement:
+alter table locations alter column paths set array using int [42000-232]
+2025-04-26 22:42:23.347643-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set [*]datatype array using int"; SQL statement:
+alter table locations alter column paths set datatype array using int [42000-232]
+2025-04-26 22:42:27.392021-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set data type [*]array using int"; expected "data type"; SQL statement:
+alter table locations alter column paths set data type array using int [42001-232]
+2025-04-26 22:42:34.897447-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table locations alter column paths set data type [*]Array using int"; expected "data type"; SQL statement:
+alter table locations alter column paths set data type Array using int [42001-232]
+2025-04-26 22:43:16.451348-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[5, 6]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:43:16.452632-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[5, 6]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:43:34.232101-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[5], [6]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:43:34.234133-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[5], [6]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:46:10.022502-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[4]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:46:10.043526-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[4]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:47:07.650196-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[0]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","INITIAL_DESC","LONGER_DESC","TITLE","PATHS","LEVEL_ID")VALUES(?,?,?,?,?,?) [22018-232]
+2025-04-26 22:47:07.651139-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[0]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","INITIAL_DESC","LONGER_DESC","TITLE","PATHS","LEVEL_ID")VALUES(?,?,?,?,?,?) [22018-232]
+2025-04-26 22:47:49.519157-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","INITIAL_DESC","LONGER_DESC","TITLE","PATHS","LEVEL_ID")VALUES(?,?,?,?,?,?) [22018-232]
+2025-04-26 22:47:49.520270-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+INSERT INTO "PUBLIC"."LOCATIONS"("LOCATION_ID","INITIAL_DESC","LONGER_DESC","TITLE","PATHS","LEVEL_ID")VALUES(?,?,?,?,?,?) [22018-232]
+2025-04-26 22:50:13.233488-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[1] [2]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:50:13.239241-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[1] [2]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:50:24.139052-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[1, 2]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]
+2025-04-26 22:50:24.139974-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'[1, 2]' (LOCATIONS: ""PATHS"" INTEGER ARRAY)"; SQL statement:
+UPDATE "PUBLIC"."LOCATIONS" SET "LOCATION_ID"=? ,"INITIAL_DESC"=? ,"LONGER_DESC"=? ,"TITLE"=? ,"PATHS"=? ,"LEVEL_ID"=?  WHERE "LOCATION_ID"=? [22018-232]

@@ -10,7 +10,7 @@ public class LocationConfig {
 
     @Bean
     public Locations location() {
-        return new Locations("testName", "testShortDesc", "testLongerDesc", 0);
+        return new Locations("testName", "testShortDesc", "testLongerDesc", new int[4]);
     }
 
 }

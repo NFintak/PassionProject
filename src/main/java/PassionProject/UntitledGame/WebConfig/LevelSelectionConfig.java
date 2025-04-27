@@ -8,6 +8,6 @@ public class LevelSelectionConfig {
 
     @Bean
     public LevelSelection levelSelection() {
-        return new LevelSelection("");
+        return new LevelSelection("", "");
     }
 }

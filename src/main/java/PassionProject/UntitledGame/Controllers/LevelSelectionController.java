@@ -29,7 +29,7 @@ public class LevelSelectionController {
     @GetMapping("/{id}")
     public LevelSelection getPathsById(@PathVariable Integer id) {
         return levelSelectionRepo.findById(id).orElseThrow(
-                () -> new RuntimeException("Path not found")
+                () -> new RuntimeException("Level not found")
         );
     }
 

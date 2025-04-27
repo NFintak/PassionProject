@@ -10,9 +10,8 @@ import java.util.ArrayList;
 @Table(name = "locations")
 public class Locations {
 
-    @ManyToOne
-    @JoinColumn(name = "level_id", nullable = false)
-    private LevelSelection levelSelection;
+    @Column(name = "level_id", nullable = false)
+    private Integer levelId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,7 +28,7 @@ public class Locations {
     private String longDesc;
 
     @Column(name = "paths")
-    private Integer paths;
+    private int[] paths;
 
 //    @OneToMany
 //    @JoinTable(
@@ -44,10 +43,10 @@ public class Locations {
         this.name = "";
         this.initDesc = "";
         this.longDesc = "";
-        this.paths = 0;
+        this.paths = new int[4];
     }
 
-    public Locations(String name, String initDesc, String longDesc, Integer path) {
+    public Locations(String name, String initDesc, String longDesc, int[] path) {
         this.name = name;
         this.initDesc = initDesc;
         this.longDesc = longDesc;
@@ -78,11 +77,11 @@ public class Locations {
         this.longDesc = longDesc;
     }
 
-    public Integer getLocations() {
+    public int[] getLocations() {
         return paths;
     }
 
-    public void setPath(Integer path) {
+    public void setPath(int[] path) {
         this.paths = path;
     }
 
