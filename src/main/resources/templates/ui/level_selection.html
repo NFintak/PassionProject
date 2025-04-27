@@ -8,11 +8,11 @@
 </head>
     <body>
         <h1>Levels</h1>
-        <div th:each="level : ${level_selection}">
-            <p><b>Level name:</b> <span th:text="${level.level_name}"></span></p>
-            <p><b>Description:</b> <span th:text="${level.description}"></span></p>
+        <div th:each="level : level_selection">
+            <p><a><span th:text="${level.levelName}"></span></a></p>
+            <p><b>Description:</b> <span th:text="${level.desc}"></span></p>
             <hr>
         </div>
-<!--        <script src="level_selection.js"></script>-->
+<!--        <script src="level_selection.js" async defer></script>-->
     </body>
 </html>
