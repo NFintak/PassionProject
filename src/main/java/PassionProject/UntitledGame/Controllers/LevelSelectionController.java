@@ -1,17 +1,20 @@
 package PassionProject.UntitledGame.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import PassionProject.UntitledGame.LevelSelection;
 import PassionProject.UntitledGame.Repos.LevelSelectionRepo;
 
 @RestController
-@RequestMapping("/levelselect")
+@RequestMapping("/level_selection")
 public class LevelSelectionController {
 
+    @Autowired
     public LevelSelectionRepo levelSelectionRepo;
 
-    @Autowired
     public LevelSelectionController(LevelSelectionRepo levelBuilderRepo) {
         this.levelSelectionRepo = levelBuilderRepo;
     }

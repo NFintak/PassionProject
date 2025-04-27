@@ -7,7 +7,7 @@ import PassionProject.UntitledGame.Repos.LocationsRepo;
 import PassionProject.UntitledGame.Locations;
 
 @RestController
-@RequestMapping("/levelselect/{level_id}/")
+@RequestMapping("/level_selection/{level_id}/")
 public class LocationController {
 
     //@Autowired
