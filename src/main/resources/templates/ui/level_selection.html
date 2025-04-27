@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <head>
     <meta charset="UTF-8">
-<!--    <meta http-equiv="Content-Type" content="text/html">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level Selection</title>
     <script src="level_selection.js" async defer></script>
 </head>
     <body>
         <h1>Levels</h1>
         <div th:each="level : ${level_selection}">
-            <p><b>Name:</b> <span th:text="${level.level_name}"></span></p>
-            <p><b>Description:</b> <span th:text="${level.description}"></span></p>
+            <p><b>Name:</b> <span th:text="${level.levelName}"></span></p>
+            <p><b>Description:</b> <span th:text="${level.desc}"></span></p>
         </div>
 <!--        <div>-->
 <!--            <p><a href="cabin.html">Cabin</a></p>-->
