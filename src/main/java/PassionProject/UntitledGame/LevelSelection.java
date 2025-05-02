@@ -19,14 +19,19 @@ public class LevelSelection {
     @Column(name = "description")
     private String desc;
 
-    public LevelSelection(String levelName, String desc) {
+    @Column(name = "long_desc")
+    private String longDesc;
+
+    public LevelSelection(String levelName, String desc, String longDesc) {
         this.levelName = levelName;
         this.desc = desc;
+        this.longDesc = longDesc;
     }
 
     public LevelSelection() {
         this.levelName = "";
         this.desc = "";
+        this.longDesc = "";
     }
 
     public Integer getId() {
@@ -51,6 +56,14 @@ public class LevelSelection {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getLongDesc() {
+        return longDesc;
+    }
+
+    public void setLongDesc(String longDesc) {
+        this.longDesc = longDesc;
     }
 
 

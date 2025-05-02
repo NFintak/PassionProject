@@ -53,6 +53,10 @@ public class Locations {
         this.paths = path;
     }
 
+    public Integer getLocationId() {
+        return id;
+    }
+
     public String getLocationName() {
         return name;
     }
